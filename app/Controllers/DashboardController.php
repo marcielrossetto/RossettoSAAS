@@ -11,11 +11,10 @@ class DashboardController {
 
         $empresa_id = $_SESSION['empresa_id'];
 
-        $dados = Reserva::dashboard($empresa_id);
+        // Dados do dashboard
+        $totalReservas = Reserva::totalPorEmpresa($empresa_id);
+        $dados = Reserva::dadosDashboard($empresa_id);
 
-        $title = "Dashboard";
-        $view = __DIR__ . "/../Views/dashboard/dashboard_content.php";
-
-        require __DIR__ . "/../Views/layout.php";
+        require "../app/Views/dashboard/index.php";
     }
 }

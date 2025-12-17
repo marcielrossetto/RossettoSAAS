@@ -1,3 +1,10 @@
+
+<h2>Dashboard</h2>
+
+<div class="alert alert-info">
+    Total de reservas: <strong><?= $totalReservas ?></strong>
+</div>
+
 <?php
 $title = "Dashboard";
 $view = __DIR__ . "/dashboard_content.php";

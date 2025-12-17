@@ -1,25 +1,21 @@
 <?php
 namespace App\Models;
 
-class Database {
+use PDO;
 
-    private static $instance = null;
+class Database
+{
 
-    public static function connect() {
+    public static function connect()
+    {
+        return new PDO(
+            "mysql:host=localhost;dbname=rossetto_saas;charset=utf8mb4",
+            "root",
+            "",
+            [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ]
+        );
 
-        if (!self::$instance) {
-
-            $config = require __DIR__ . "/../Config/app.php";
-
-            self::$instance = new \PDO(
-                "mysql:host={$config['db_host']};dbname={$config['db_name']};charset=utf8",
-                $config['db_user'],
-                $config['db_pass']
-            );
-
-            self::$instance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        }
-
-        return self::$instance;
     }
 }

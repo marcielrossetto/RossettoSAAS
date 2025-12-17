@@ -1,5 +1,4 @@
 <?php
-session_start();
 $erro = $_SESSION['erro'] ?? "";
 unset($_SESSION['erro']);
 ?>
@@ -46,6 +45,9 @@ unset($_SESSION['erro']);
 
     <div class="login-box">
         <h3>Entrar no Sistema</h3>
+        <div class="mt-3 text-center">
+            <a href="/RossettoSaas/public/register">Cadastrar novo usuário</a>
+        </div>
 
         <?php if (!empty($erro)): ?>
             <div class="alert alert-danger text-center">

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title><?php echo $title ?? "RossettoSaas"; ?></title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- AdminLTE CSS -->
     <link rel="stylesheet" href="assets/adminlte/css/adminlte.min.css">

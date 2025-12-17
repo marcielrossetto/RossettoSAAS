@@ -1,3 +1,4 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <h2>Nova Reserva</h2>
 
 <form method="POST" action="salvar-reserva">
@@ -40,3 +41,4 @@
     <button class="btn btn-success">Salvar</button>
 
 </form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

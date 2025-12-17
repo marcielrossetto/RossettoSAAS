@@ -4,9 +4,11 @@ namespace App\Core;
 use App\Core\Auth;
 use App\Core\Permissions;
 
-class Router {
+class Router
+{
 
-    public function handle() {
+    public function handle()
+    {
 
         $url = $_GET['route'] ?? "login";
 
@@ -15,58 +17,67 @@ class Router {
             case "profile":
                 require __DIR__ . "/../Controllers/ProfileController.php";
                 (new \App\Controllers\ProfileController())->index();
-            break;
+                break;
 
             case "profile-edit":
                 require __DIR__ . "/../Controllers/ProfileController.php";
                 (new \App\Controllers\ProfileController())->edit();
-            break;
+                break;
 
             case "profile-update":
                 require __DIR__ . "/../Controllers/ProfileController.php";
                 (new \App\Controllers\ProfileController())->update();
-            break;
+                break;
 
             case "dashboard":
                 require __DIR__ . "/../Controllers/DashboardController.php";
                 (new \App\Controllers\DashboardController())->index();
-            break;
+                break;
 
             case "reservas":
                 require __DIR__ . "/../Controllers/ReservaController.php";
                 (new \App\Controllers\ReservaController())->index();
-            break;
+                break;
 
             case "nova-reserva":
                 require __DIR__ . "/../Controllers/ReservaController.php";
                 (new \App\Controllers\ReservaController())->create();
-            break;
+                break;
 
             case "salvar-reserva":
                 require __DIR__ . "/../Controllers/ReservaController.php";
                 (new \App\Controllers\ReservaController())->store();
-            break;
+                break;
 
             case "login":
                 require __DIR__ . "/../Controllers/AuthController.php";
                 (new \App\Controllers\AuthController())->loginPage();
-            break;
+                break;
+            case "register":
+                require __DIR__ . "/../Controllers/AuthController.php";
+                (new \App\Controllers\AuthController())->register();
+                break;
+
+            case "register-save":
+                require __DIR__ . "/../Controllers/AuthController.php";
+                (new \App\Controllers\AuthController())->store();
+                break;
 
             case "logar":
                 require __DIR__ . "/../Controllers/AuthController.php";
                 (new \App\Controllers\AuthController())->login();
-            break;
+                break;
 
             case "logout":
                 Auth::logout();
                 header("Location: login");
                 exit;
-            break;
+                break;
 
             case "calendario":
                 require __DIR__ . "/../Controllers/CalendarioController.php";
                 (new \App\Controllers\CalendarioController())->index();
-            break;
+                break;
 
             default:
                 echo "404 - Página não encontrada.";

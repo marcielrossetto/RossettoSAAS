@@ -1,3 +1,6 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 <h2>Reservas</h2>
 
 <a href="nova-reserva" class="btn btn-primary mb-3">Criar Nova Reserva</a>
@@ -14,26 +17,23 @@
         <th>Usuário</th>
     </tr>
 
-    <?php 
-        require_once "../app/Models/Usuario.php"; 
+    <?php
+    require_once "../app/Models/Usuario.php";
     ?>
 
     <?php foreach ($reservas as $r): ?>
-    <tr>
-        <td><?= $r['id']; ?></td>
-        <td><?= $r['nome']; ?></td>
-        <td><?= $r['telefone']; ?></td>
-        <td><?= $r['data']; ?></td>
-        <td><?= $r['horario']; ?></td>
-        <td><?= $r['pessoas']; ?></td>
-        <td><?= $r['mesa']; ?></td>
+        <tr>
+            <td><?= $r['id']; ?></td>
+            <td><?= $r['nome']; ?></td>
+            <td><?= $r['telefone']; ?></td>
+            <td><?= $r['data']; ?></td>
+            <td><?= $r['horario']; ?></td>
+            <td><?= $r['pessoas']; ?></td>
+            <td><?= $r['mesa']; ?></td>
+            <td><?= $r['usuario_nome'] ?? 'Desconhecido'; ?></td>
 
-        <td>
-            <?php  
-                $u = \App\Models\Usuario::buscar($r['usuario_id']);
-                echo $u ? $u['nome'] : "Desconhecido";
-            ?>
-        </td>
-    </tr>
+        </tr>
     <?php endforeach; ?>
 </table>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

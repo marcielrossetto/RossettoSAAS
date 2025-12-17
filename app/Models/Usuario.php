@@ -31,6 +31,12 @@ class Usuario {
     $sql = $pdo->prepare("UPDATE usuarios SET senha=? WHERE id=?");
     return $sql->execute([$hash, $id]);
 }
+public static function buscarPorId($id) {
+    $pdo = Database::connect();
+    $sql = $pdo->prepare("SELECT nome FROM usuarios WHERE id = ?");
+    $sql->execute([$id]);
+    return $sql->fetch(\PDO::FETCH_ASSOC);
+}
 
     public static function criar($empresa_id, $nome, $email, $senha, $nivel = 2) {
         $pdo = Database::connect();

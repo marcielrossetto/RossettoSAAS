@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <?php
 $title = "Nova Reserva";
 $view = __DIR__ . "/form.php";
@@ -41,6 +43,7 @@ require __DIR__ . "/../layout.php";
 
 <br>
 <a href="reservas">Voltar</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
